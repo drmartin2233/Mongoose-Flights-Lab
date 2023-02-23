@@ -2,26 +2,45 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
-const flights = new Schema({
+
+const destination = new Schema ({
+    airports: {
+        type: String, required: true,
+        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
+    },
+    arrivalDate: {
+        type: Date
+    }
+})
+
+
+
+
+const flightSchema = new Schema({
 
     airline: {
-        type: String,
+        type: String, required: true,
         enum: ['American', 'Southwest', 'United']
     },
 
     airport: {
-        type: String,
-        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
+        type: String, required: true,
+        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+        default: 'DEN'
     },
 
     flightNo: {
-        type: Number, 
+        type: Number, required: true,
         min: 10,
         max: 9999
     },
 
     departs: {
-        type: Date,
+        // const dateControl = document.querySelector('input[type="datetime-local"]');
+        //  dateControl.value = '2017-06-01T08:30';
+
+        type: Date, required: true,
+        default: 'One year from date created'
     }
 })
 

@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<!-- <table id="list">
+  <thead>
+    <tr>
+      <th></th>
+      <th><br></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% flights.forEach(function(m) { %>
+      <tr>
+        <td><%= m.airline %></td>
+        <td><%= m.airport %></td>
+        <td><a href="/flights/<%= m._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table> -->
+  <!DOCTYPE html>
+ <html>
+   <head>
+     <title><%= title %></title>
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+   </head>
+   <body>
+     <h1><%= title %></h1>
+     <a href="/flights">All Flights</a>
+   </body>
+ </html>
+
+ 
+<%- include('../partials/footer') %>
